@@ -1,4 +1,4 @@
-package com.jsp.person.account;
+package com.jsp.bank.branch;
 
 import java.util.ArrayList;
 import java.util.List;

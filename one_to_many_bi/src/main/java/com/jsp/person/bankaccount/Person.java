@@ -1,7 +1,8 @@
-package com.jsp.person.account;
+package com.jsp.person.bankaccount;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,15 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Bank {
-
+public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	private long cno;
 
-	@OneToMany(mappedBy = "bank")
-	private List<Branch> branch;
+	@OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+	private List<Account> account;
 
 	public int getId() {
 		return id;
@@ -35,12 +36,20 @@ public class Bank {
 		this.name = name;
 	}
 
-	public List<Branch> getBranch() {
-		return branch;
+	public long getCno() {
+		return cno;
 	}
 
-	public void setBranch(List<Branch> branch) {
-		this.branch = branch;
+	public void setCno(long cno) {
+		this.cno = cno;
+	}
+
+	public List<Account> getAccount() {
+		return account;
+	}
+
+	public void setAccount(List<Account> account) {
+		this.account = account;
 	}
 
 }

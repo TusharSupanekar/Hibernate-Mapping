@@ -1,4 +1,4 @@
-package com.jsp.person.account;
+package com.jsp.bank.branch;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
